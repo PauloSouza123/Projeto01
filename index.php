@@ -8,7 +8,11 @@
     include('config.php'); 
 
 ?>
-<?php Site::updateUsuarioOnline(); ?>
+<?php 
+
+    Site::updateUsuarioOnline(); 
+    Site::contador();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

@@ -1,5 +1,13 @@
 <?php 
     $usuariosOnline = Painel::listarUsuariosOnline();
+
+    $pegarVisitasTotais = MySql::conectar()->prepare("SELECT * FROM `tb_admin.visitas`");
+    $pegarVisitasTotais->execute();
+    $pegarVisitasTotais = $pegarVisitasTotais->rowCount(); // rowCount serve para pegar somente o número
+
+    $pegarVisitasHoje = MySql::conectar()->prepare("SELECT * FROM `tb_admin.visitas` WHERE dia = ?");
+    $pegarVisitasHoje->execute(array(date('Y-m-d')));
+    $pegarVisitasHoje = $pegarVisitasHoje->rowCount();
 ?>
 
 <!-- Comentário de teste -->
@@ -18,12 +26,12 @@
 
             <div class="box-main-single">
                 <h2>Total de Visitas</h2>
-                <p>18</p>
+                <p><?php echo $pegarVisitasTotais; ?></p>
             </div>
 
             <div class="box-main-single">
                 <h2>Visitas Hoje</h2>
-                <p>2</p>
+                <p><?php echo $pegarVisitasHoje; ?></p>
             </div>
 </div>
 </div>
