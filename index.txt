@@ -1,0 +1,75 @@
+
+#13293d
+#173b5c
+#006494
+#247ba0
+#1b97e0
+#e8f1f2
+
+class Site
+{
+    if(isset($_SESSION['online'])){
+        $token = $_SESSION['online'];
+        $horarioAtual = date('Y-m-d H:i:s');
+
+        $check = MySql::conectar()->prepare("SELECT `id` FROM `tb_admin.online` WHERE token = ?");
+        $check->execute(array($token));
+
+        if($check->rowCount() == 1){
+            $sql = MySql::conectar()->prepare("UPDATE `tb_admin.online` SET `ultima_acao` = ? WHERE token = ?");
+            $sql->execute(array($horarioAtual, $token));
+        }else{
+            $ip = $_SERVER['REMOTE_ADDR'];
+            $token = $_SESSION['online'];
+            $horarioAtual = date('Y-m-d H:i:s');
+            $sql = MySql::conectar()->prepare("INSERT INTO `tb_admin.online` VALUES (null,?,?,?));
+            $sql->execute(array($ip, $horarioAtual, $token));
+        }
+    }else{
+        $_SESSION['online'] = uniqid();
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $token = $_SESSION['online'];
+        $horarioAtual = date('Y-m-d H:i:s');
+        $sql = MySql::conectar()->prepare("INSERT INTO `tb_admin.online` VALUES(null,?,?,?)");
+        $sql->execute(array($ip, $horarioAtual, $token));
+    }
+}
+
+
+
+
+
+
+
+class Site
+{
+    public static function updateUsuariosOnline(){
+        if(isset($_SESSION['online'])){
+            $horarioAtual = date('Y-m-d H:i:s');
+            $token = $_SESSION['online'];
+
+            $check = MySql::conectar("SELECT `id` FROM `tb_admin.online` WHERE token = ?");
+            $check->execute(array($token));
+            
+            if($check->rowCount() == 1){
+                $check = MySql::conectar()->prepare("UPDATE `tb_admin.online` SET `ultima_acao` = ? WHERE id = ?");
+                $check->execute(array($horarioAtual, $token));
+            }else{
+                $ip = $_SERVER['REMOTE_ADDR'];
+                $token = $_SESSION['online'];
+                $horarioAtual = date('Y-m-d H:i:s');
+                $sql = MySql::conectar()->prepare("INSERT INTO `tb_admin.online` VALUES (null,?,?,?)");
+                $sql->execute(array($ip, $horarioAtual, $token))
+            }
+
+        }else{
+            $_SESSION['onine'] = uniqid();
+            $ip = $_SERVER['REMOTE_ADDR'];
+            $token = $_SESSION['online'];
+            $horarioAtual = date('Y-m-d H:i:s');
+            $sql = MySql::conectar()->prepare("INSERT INTO `tb_admin.online` VALUES(null,?,?,?)");
+            $sql->execute(array($ip, $horarioAtual, $token));
+        }
+    }
+
+}
