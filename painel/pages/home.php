@@ -39,7 +39,6 @@
 <div class="main-container">
     <h3><i class="fa-solid fa-earth-americas"></i> Usuários Online</h3>
     <div class="table-responsive">
-<?php foreach($usuariosOnline as $key => $value){ ?>
         <div class="row">
             <div class="col">
                 <h3>IP</h3>
@@ -48,7 +47,7 @@
                 <h3>Última Ação</h3>
             </div>
         </div>
-
+        <?php foreach($usuariosOnline as $key => $value){ ?>
         <div class="row">
             <div class="col">
                 <span><?php echo $value['ip']; ?></span>

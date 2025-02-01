@@ -368,6 +368,14 @@ header{
     background-color: #F75353;
 }
 
+.active-menu{
+    background-color: #384d54 !important;
+}
+
+.active-menu:before{
+    content: '> ';
+}
+
 @media screen and (max-width: 1000px){
     .box-main-all{
         flex-wrap: wrap;

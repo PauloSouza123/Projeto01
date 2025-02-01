@@ -20,13 +20,13 @@
 
     <div class="menu">
         <div class="box-menu">
-            <?php if(isset($_SESSION['img'])){ ?>
-                <div class="imagem-usuario">
-                    <img src="<?php echo INCLUDE_PATH_PAINEL; ?>uploads/<?php echo $_SESSION['img']; ?>" />
-                </div>
-            <?php }else{ ?>
+            <?php if($_SESSION['img'] == ''){ ?>
                 <div class="avatar-usuario">
                     <i class="fa fa-user"></i>
+                </div>
+            <?php }else{ ?>
+                <div class="imagem-usuario">
+                    <img src="<?php echo INCLUDE_PATH_PAINEL; ?>uploads/<?php echo $_SESSION['img']; ?>" />
                 </div>
             <?php } ?>
         </div>
@@ -38,24 +38,27 @@
         <div class="menu-links">
             <div class="menu-links-secoes">
                 <h3>Cadastro</h3>
-                <a href="<?php echo INCLUDE_PATH_PAINEL; ?>cadastro-depoimento">Cadastrar Depoimento</a>
-                <a href="">Cadastrar Serviço</a>
+                <a <?php selecionadoMenu('cadastro-depoimento'); ?> href="<?php echo INCLUDE_PATH_PAINEL; ?>cadastro-depoimento">Cadastrar Depoimento</a>
+                <a <?php selecionadoMenu('cadastro-servico'); ?> href="">Cadastrar Serviço</a>
+                <a <?php selecionadoMenu('cadastro-slide'); ?> href="">Cadastrar Slide</a>
+                
             </div>
 
             <div class="menu-links-secoes">
                 <h3>Gestão</h3>
-                <a href="">Listar Depoimento</a>
-                <a href="">Listar Serviço</a>
+                <a <?php selecionadoMenu('listar-depoimentos'); ?> href="">Listar Depoimentos</a>
+                <a <?php selecionadoMenu('listar-servicos'); ?> href="">Listar Serviços</a>
+                <a <?php selecionadoMenu('listar-slides'); ?> href="">Listar Serviços</a>
             </div>
             <div class="menu-links-secoes">
                 <h3>Administração do Painel</h3>
-                <a href="<?php echo INCLUDE_PATH_PAINEL; ?>editar-usuario">Editar Usuário</a>
-                <a href="">Adicionar Usuário</a>
+                <a <?php selecionadoMenu('editar-usuario'); ?> href="<?php echo INCLUDE_PATH_PAINEL; ?>editar-usuario">Editar Usuário</a>
+                <a <?php selecionadoMenu('adicionar-usuario'); ?> <?php verificaPermissaoMenu(2); ?> href="<?php echo INCLUDE_PATH_PAINEL; ?>adicionar-usuario">Adicionar Usuário</a>
             </div>
 
             <div class="menu-links-secoes">
                 <h3>Configurações Gerais</h3>
-                <a href="">Editar</a>
+                <a <?php selecionadoMenu('editar-site'); ?> href="">Editar Site</a>
             </div>
         </div>
         <div class="clear"></div>
