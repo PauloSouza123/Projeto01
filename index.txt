@@ -73,3 +73,75 @@ class Site
     }
 
 }
+
+class Usuario
+{
+    public static function atualizaUsuario($nome, $password, $imagem){
+        $sql = MySql::conectar()->prepare("UPDATE `tb_admin.usuarios` SET nome = ?, password = ?, $img = ?, user = ?);
+        if($sql->execute(array($nome,$password,$imagem,$_SESSION['user']))){
+            return true;
+        }else{
+            return false;
+        }
+    }
+}
+
+class Painel
+{
+    public static function imagemValida($imagem){
+        if($imagem['type'] == 'image/jpeg' ||
+            $imagem['type'] == 'image/jpg' ||
+            $imagem['type'] == 'image/png'){
+                $tamanho = intval($imagem['size'] / 1024){
+                    if($tamanho <= 300){
+                        return true;
+                    }else{
+                        return false;
+                    }
+                }else{
+                    return false;
+                }
+            }
+    }
+
+    public static function uploadFile($file){
+        if(move_uploaded_file($file['tmp_name'], BASE_DIR_PAINE.'/uploads/.$file['name'])){
+            return $file['name'];
+        }else{
+            return false;
+        }
+    }
+
+    public static function deleteFile($file){
+        @unlink('uploads/'.$file);
+    }
+}
+
+if(isset($_POST[acao])){
+    $nome = $_POST['nome'];
+    $password = $_POST['password'];
+    $imagem = $_FILE['imagem'];
+    $imagem_atual = $_POST['imagem_atual'];
+    $usuario = new Usuario();
+    if($imagem['name'] != ''){
+        if(Painel::imagemValida($imagem)){
+            Painel::deleteFile($imagem_atual);
+            $imagem = Painel::uploadFile($imagem);
+            if($usuario->atualizarUsuario($nome,$password,$imagem)){
+                $_SESSION['img'] = $imagem;
+                Painel::alert('sucesso','Atualizado com sucesso junto com a imagem!');
+            }else{
+                Painel::alert('erro','Erro ao atualizar usuario junto com a imagem!');
+            }
+        }else{
+            Painel::alert('erro','O formato da imagem não é válido!');
+        }
+    }
+}else{
+    $imagem = $imagem_atual
+    if($usuario->atualizarUsuario($nome,$password,$imagem)){
+        Painel::alert('sucesso','Atualizado com sucesso');
+    }else{
+        Painel::alert('erro','Erro ao atualizar!');
+    }
+}

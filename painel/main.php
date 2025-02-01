@@ -22,7 +22,7 @@
         <div class="box-menu">
             <?php if(isset($_SESSION['img'])){ ?>
                 <div class="imagem-usuario">
-                    <img src="<?php echo INCLUDE_PATH_PAINEL; ?>uploads/paulo.jpg" />
+                    <img src="<?php echo INCLUDE_PATH_PAINEL; ?>uploads/<?php echo $_SESSION['img']; ?>" />
                 </div>
             <?php }else{ ?>
                 <div class="avatar-usuario">
@@ -49,7 +49,7 @@
             </div>
             <div class="menu-links-secoes">
                 <h3>Administração do Painel</h3>
-                <a href="">Editar Usuário</a>
+                <a href="<?php echo INCLUDE_PATH_PAINEL; ?>editar-usuario">Editar Usuário</a>
                 <a href="">Adicionar Usuário</a>
             </div>
 
