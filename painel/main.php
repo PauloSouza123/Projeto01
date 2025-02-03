@@ -70,7 +70,7 @@
                 <i class="fa fa-bars"></i>
             </div>
             <div class="loggout">
-                <a href="<?php echo INCLUDE_PATH_PAINEL; ?>home"><i class="fa-solid fa-house"></i> Home</a>
+                <a <?php if(@$_GET['url'] == '' || @$_GET['url'] == 'home'){ ?> style="background:#60727a;padding:10px;" <?php } ?> href="<?php echo INCLUDE_PATH_PAINEL; ?>home"><i class="fa-solid fa-house"></i> Home</a>
                 <a href="<?php INCLUDE_PATH_PAINEL; ?>?loggout"><i class="fa-solid fa-right-from-bracket"></i> Sair</a>
             </div><!--loggout-->
             <div class="clear"></div>

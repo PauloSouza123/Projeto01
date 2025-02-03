@@ -2,6 +2,12 @@
 
     class Painel
     {
+        public static $cargos = [
+            '0' => 'Programador',
+            '1' => 'Subadministrador',
+            '2' => 'Administrador'
+        ];
+
         public static function logado(){
             return isset($_SESSION['login']) ? true : false;
         }
@@ -60,7 +66,17 @@
                 }
         }
 
-        public static function uploadFile($file){
+        // public static function uploadFile($file){               // Atualiza a imagem com base no diretório uploads
+        //     $formatoArquivo = explode('.',$file['name']);
+        //     $imagemNome = uniqid().'.'.$formatoArquivo[count($formatoArquivo) - 1];
+        //     if(move_uploaded_file($file['tmp_name'],BASE_DIR_PAINEL.'/uploads/'.$imagemNome)){
+        //         return $imagemNome;
+        //     }else{
+        //         return false;
+        //     }
+        // }
+
+        public static function uploadFile($file){               // Atualiza a imagem com base no diretório uploads
             if(move_uploaded_file($file['tmp_name'],BASE_DIR_PAINEL.'/uploads/'.$file['name'])){
                 return $file['name'];
             }else{

@@ -19,14 +19,8 @@
     define('PASSWORD','');
     define('DATABASE','projeto_01');
 
-    function setarCargo($cargo){
-        $arr = [
-            '0' => 'Programador',
-            '1' => 'Subadministrador',
-            '2' => 'Administrador'
-        ];
-
-        return $arr[$cargo];
+    function setarCargo($indice){
+        return Painel::$cargos[$indice];
     }
 
     function selecionadoMenu($par){

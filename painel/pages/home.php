@@ -59,3 +59,33 @@
 <?php } ?>
     </div>
 </div>
+
+<div class="main-container">
+    <h3><i class="fa-solid fa-earth-americas"></i> Usuários Online</h3>
+    <div class="table-responsive">
+        <div class="row">
+            <div class="col">
+                <h3>Nome</h3>
+            </div>
+            <div class="col">
+                <h3>Cargo</h3>
+            </div>
+        </div>
+        <?php 
+            $usuariosPainel = MySql::conectar()->prepare("SELECT * FROM `tb_admin.usuarios`");
+            $usuariosPainel->execute();
+            $usuariosPainel = $usuariosPainel->fetchAll();
+            foreach($usuariosPainel as $key => $value){ 
+        
+        ?>
+        <div class="row">
+            <div class="col">
+                <span><?php echo $value['user']; ?></span>
+            </div>
+            <div class="col">
+                <span><?php echo setarCargo($value['cargo']); ?></span>
+            </div>
+        </div>
+<?php } ?>
+    </div>
+</div>
