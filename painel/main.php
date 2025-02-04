@@ -46,7 +46,7 @@
 
             <div class="menu-links-secoes">
                 <h3>Gestão</h3>
-                <a <?php selecionadoMenu('listar-depoimentos'); ?> href="">Listar Depoimentos</a>
+                <a <?php selecionadoMenu('listar-depoimentos'); ?> href="<?php echo INCLUDE_PATH_PAINEL; ?>listar-depoimentos">Listar Depoimentos</a>
                 <a <?php selecionadoMenu('listar-servicos'); ?> href="">Listar Serviços</a>
                 <a <?php selecionadoMenu('listar-slides'); ?> href="">Listar Serviços</a>
             </div>
@@ -89,6 +89,7 @@
  
     <script src="https://kit.fontawesome.com/8f8c768746.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="<?php INCLUDE_PATH_PAINEL; ?>js/jquery_mask.js"></script>
     <script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/menu.js"></script>
  </body>
  </html>

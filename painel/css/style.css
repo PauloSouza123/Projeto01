@@ -356,6 +356,50 @@ header{
     transition: 0.4s;
 }
 
+.form-editar-depoimento-single{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: white;
+    padding: 30px;
+}
+
+.form-editar-depoimento-single input[type=text],
+.form-editar-depoimento-single input[type=password]{
+    width: 100%;
+    border: 1px solid #ccc;
+    outline: none;
+    padding-left: 10px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.form-editar-depoimento-single textarea{
+    width: 100%;
+    height: 140px;
+    outline: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    resize: vertical;
+    border: 1px solid #ccc;
+}
+
+.form-editar-depoimento-single input[type=submit]{
+    width: 100px;
+    height: 40px;
+    color: white;
+    border: 0;
+    cursor: pointer;
+    background-color: #2f3d42;
+    font-weight: normal;
+    border-radius: 4px;
+}
+
+.form-editar-depoimento-single input[type=submit]:hover{
+    background-color: #384d54;
+    transition: 0.4s;
+}
+
 .main-container form{
     width: 100%;
 }
@@ -393,6 +437,37 @@ header{
     padding-left: 10px;
     height: 40px;
     margin-bottom: 10px;
+}
+
+table{
+    width: 100%;
+    margin: 10px 0;
+}
+
+table tr:nth-of-type(1){
+    background-color: #189778;
+    color: white !important;
+}
+
+table tr td{
+    padding: 8px 8px;
+    border-bottom: 1px solid #ccc;
+    margin: 5px 0;
+}
+
+a.btn-table{
+    text-decoration: none;
+    padding: 4px 3px;
+    color: white;
+    cursor: pointer;
+}
+
+a.btn-edit{
+    background-color: orange;
+}
+
+a.btn-delete{
+    background-color: red;
 }
 
 @media screen and (max-width: 1000px){
