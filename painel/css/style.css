@@ -47,8 +47,16 @@ html,body{
 
 .box-login-wraper form{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
+}
+
+.box-wraper-single-login label{
+    color: #444;
+    font-size: 18px;
+    font-weight: 400;
 }
 
 .box-login-wraper input[type=text],
