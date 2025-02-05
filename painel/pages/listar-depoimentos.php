@@ -1,8 +1,13 @@
 <?php
-    $depoimentos = Painel::selectAll('tb_site.depoimentos');
+
+    $paginaAtual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+    $porPagina = 4;
+
+    $depoimentos = Painel::selectAll('tb_site.depoimentos', ($paginaAtual - 1) * $porPagina, $porPagina);
 ?>
 <div class="main-container">
     <h3><i class="fa fa-id-card-o"></i> Depoimentos Cadastrados</h3>
+    <div class="table-wraper">
     <table>
         <tr>
             <td>Nome</td>
@@ -21,4 +26,22 @@
         </tr>
         <?php } ?>
     </table>
+
+    <div class="paginacao">
+        <?php
+            $totalPaginas = ceil(count(Painel::selectAll('tb_site.depoimentos')) / $porPagina);
+            for($i = 1; $i < $totalPaginas; $i++){
+                if($i == $paginaAtual){
+                    echo '<a class="page-selected" href="'.INCLUDE_PATH_PAINEL.'listar-depoimentos?pagina='.$i.'">'.$i.'</a>';
+                }else{
+                    echo '<a href="'.INCLUDE_PATH_PAINEL.'listar-depoimentos?pagina='.$i.'">'.$i.'</a>';
+                }
+            }
+        ?>
+        <!-- <a class="page-selected" href="">1</a>
+        <a href="">2</a>
+        <a href="">3</a> -->
+    </div><!--paginacao-->
+
+    </div><!--table-wraper-->
 </div>

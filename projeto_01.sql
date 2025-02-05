@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Tempo de geração: 31/01/2025 às 19:07
+-- Host: 127.0.0.1:3306
+-- Tempo de geração: 04/02/2025 às 23:42
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -24,61 +24,37 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `tb_admin.online`
+-- Estrutura para tabela `tb_site.depoimentos`
 --
 
-CREATE TABLE `tb_admin.online` (
+CREATE TABLE `tb_site.depoimentos` (
   `id` int(11) NOT NULL,
-  `ip` varchar(266) NOT NULL,
-  `ultima_acao` datetime NOT NULL,
-  `token` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `tb_admin.online`
---
-
-INSERT INTO `tb_admin.online` (`id`, `ip`, `ultima_acao`, `token`) VALUES
-(4, '::1', '2025-01-30 07:33:04', '679b4a39c2c52'),
-(5, '::1', '2025-01-30 13:28:38', '679ba8b5cd77c'),
-(6, '::1', '2025-01-30 21:55:29', '679bc197b3e73');
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `tb_admin.usuarios`
---
-
-CREATE TABLE `tb_admin.usuarios` (
-  `id` int(11) NOT NULL,
-  `user` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
   `nome` varchar(255) NOT NULL,
-  `img` text NOT NULL,
-  `cargo` int(11) NOT NULL
+  `depoimento` text NOT NULL,
+  `data` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `tb_admin.usuarios`
+-- Despejando dados para a tabela `tb_site.depoimentos`
 --
 
-INSERT INTO `tb_admin.usuarios` (`id`, `user`, `password`, `nome`, `img`, `cargo`) VALUES
-(1, 'admin', 'admin', 'Paulo A. Souza', 'paulo.jpg', 2);
+INSERT INTO `tb_site.depoimentos` (`id`, `nome`, `depoimento`, `data`) VALUES
+(1, 'Paulo', 'Depoimento de teste\r\n', ''),
+(2, 'Paulo', 'Depoimento de teste\r\n', ''),
+(3, 'Paulo', 'Depoimento de teste\r\n', ''),
+(4, 'Andressa Depoimentos', 'Depoimento da Andressa Lorenna', ''),
+(5, 'Luana Paola', 'Depoimento da Luana Paola', '10/03/2020'),
+(6, 'Nome do meu depoimento de teste 01', 'Texto do meu depoimento de teste 01', '10/03/2001'),
+(7, 'Carlos Drummond', 'Carlos Drummond deixa seu depoimento aqui!', '22/07/2024');
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices de tabela `tb_admin.online`
+-- Índices de tabela `tb_site.depoimentos`
 --
-ALTER TABLE `tb_admin.online`
-  ADD PRIMARY KEY (`id`);
-
---
--- Índices de tabela `tb_admin.usuarios`
---
-ALTER TABLE `tb_admin.usuarios`
+ALTER TABLE `tb_site.depoimentos`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -86,16 +62,10 @@ ALTER TABLE `tb_admin.usuarios`
 --
 
 --
--- AUTO_INCREMENT de tabela `tb_admin.online`
+-- AUTO_INCREMENT de tabela `tb_site.depoimentos`
 --
-ALTER TABLE `tb_admin.online`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT de tabela `tb_admin.usuarios`
---
-ALTER TABLE `tb_admin.usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `tb_site.depoimentos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
