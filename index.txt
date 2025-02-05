@@ -145,3 +145,49 @@ if(isset($_POST[acao])){
         Painel::alert('erro','Erro ao atualizar!');
     }
 }
+
+            <div class="depoimentos-single">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero reiciendis eveniet sed, nulla 
+                    vitae sequi voluptatum culpa repellendus expedita aspernatur dolorem iure? Laudantium repellendus 
+                    corrupti amet culpa obcaecati nesciunt rem!Integer a felis in urna efficitur elementum porttitor id mauris. 
+                    Quisque tortor eros, lobortis iaculis nisi eget, consectetur scelerisque felis. Vivamus velit 
+                    leo, pharetra quis suscipit id, facilisis auctor nisi. Mauris non dolor pulvinar, pretium 
+                    justo at, pulvinar ligula</p>
+                <p>Lorem Ipsum</p>
+            </div>
+            <div class="depoimentos-single">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero reiciendis eveniet sed, nulla 
+                    vitae sequi voluptatum culpa repellendus expedita aspernatur dolorem iure? Laudantium repellendus 
+                    corrupti amet culpa obcaecati nesciunt rem!Integer a felis in urna efficitur elementum porttitor id mauris. 
+                    Quisque tortor eros, lobortis iaculis nisi eget, consectetur scelerisque felis. Vivamus velit 
+                    leo, pharetra quis suscipit id, facilisis auctor nisi. Mauris non dolor pulvinar, pretium 
+                    justo at, pulvinar ligula</p>
+                <p>Lorem Ipsum</p>
+            </div>
+
+class Painel
+{
+    public static function orderItem($tabela, $orderType, $idItem){
+        if($orderType == 'up'){
+            $infoItemAtual = Painel::select($tabela,'id=?',array($idItem));
+            $order_id = $infoItemAtual['order_id'];
+            $itemBefore = MySql::conectar()->prepare("SELECT * FROM `$tabela` WHERE order_id < $order_id DESC LIMIT 1");
+            $itemBefore->execute();
+            if($itemBefore->rowCount() == 0)
+                return;
+            $itemBefore = $itemBefore->fetch();
+            Painel::update('nome_tabela'=>$tabela,'id'=>$itemBefore['id'],'order_id'=>$infoItemAtual['order_id']);
+            Painel::update('nome_tabela'=>$tabela,'id'=>$infoItemAtual['id'],'order_id'=>$itemBefore['order_id']);
+        }else if($orderType == 'down'){
+            $infoItemAtual = Painel::select($tabela,'id=?',array($idItem));
+            $order_id = $infoItemAtual['order_id'];
+            $itemAfter = MySql::conectar()->prepare("SELECT * FROM `$tabela` WHERE order_id > $order_id ASC LIMIT 1");
+            $itemAfter->execute();
+            if($itemAfter->rowCount == 0)
+                return;
+            $itemAfter = $itemAfter->fetch();
+            Painel::update('nome_tabela'=>$tabela,'id'=>$itemAfter['id'],'order_id'=>$infoItemAtual['order_id']);
+            Painel::update('nome_tabela'=>$tabela,'id'=>$infoItemAtual['id'],'order_id'=>$itemAfter['order_id']);
+        }
+    }
+}

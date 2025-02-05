@@ -88,34 +88,18 @@
     <section class="extras w100">
         <div class="center">
         <div id="depoimentos" class="depoimentos w50 left">
-        <h2>Depoimentos</h2>
+        <h2>Depoimentos dos nossos clientes</h2>
+        <?php 
+            $sql = MySql::conectar()->prepare("SELECT * FROM `tb_site.depoimentos` ORDER BY order_id ASC LIMIT 3");
+            $sql->execute();
+            $depoimentos = $sql->fetchAll();
+            foreach($depoimentos as $key => $value){
+        ?>
             <div class="depoimentos-single">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero reiciendis eveniet sed, nulla 
-                    vitae sequi voluptatum culpa repellendus expedita aspernatur dolorem iure? Laudantium repellendus 
-                    corrupti amet culpa obcaecati nesciunt rem!Integer a felis in urna efficitur elementum porttitor id mauris. 
-                    Quisque tortor eros, lobortis iaculis nisi eget, consectetur scelerisque felis. Vivamus velit 
-                    leo, pharetra quis suscipit id, facilisis auctor nisi. Mauris non dolor pulvinar, pretium 
-                    justo at, pulvinar ligula</p>
-                <p>Lorem Ipsum</p>
+                <p>"<?php echo $value['depoimento']; ?>"</p>
+                <h4><?php echo $value['nome']; ?> - <?php echo $value['data']; ?></h4>
             </div>
-            <div class="depoimentos-single">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero reiciendis eveniet sed, nulla 
-                    vitae sequi voluptatum culpa repellendus expedita aspernatur dolorem iure? Laudantium repellendus 
-                    corrupti amet culpa obcaecati nesciunt rem!Integer a felis in urna efficitur elementum porttitor id mauris. 
-                    Quisque tortor eros, lobortis iaculis nisi eget, consectetur scelerisque felis. Vivamus velit 
-                    leo, pharetra quis suscipit id, facilisis auctor nisi. Mauris non dolor pulvinar, pretium 
-                    justo at, pulvinar ligula</p>
-                <p>Lorem Ipsum</p>
-            </div>
-            <div class="depoimentos-single">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero reiciendis eveniet sed, nulla 
-                    vitae sequi voluptatum culpa repellendus expedita aspernatur dolorem iure? Laudantium repellendus 
-                    corrupti amet culpa obcaecati nesciunt rem!Integer a felis in urna efficitur elementum porttitor id mauris. 
-                    Quisque tortor eros, lobortis iaculis nisi eget, consectetur scelerisque felis. Vivamus velit 
-                    leo, pharetra quis suscipit id, facilisis auctor nisi. Mauris non dolor pulvinar, pretium 
-                    justo at, pulvinar ligula</p>
-                <p>Lorem Ipsum</p>
-            </div>
+        <?php } ?>
         </div>
 
 

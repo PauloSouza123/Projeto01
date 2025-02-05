@@ -264,12 +264,19 @@ nav.desktop ul li a:hover{
 
 .depoimentos-single{
     padding-right: 60px;
+    margin: 10px 0;
 }
 
 .depoimentos-single p{
     color: white;
     font-size: 18px;
+}
 
+.depoimentos-single h4{
+    margin: 4px 0 15px 0;
+    font-weight: 500;
+    color: white;
+    font-size: 20px;
 }
 
 .servicos{

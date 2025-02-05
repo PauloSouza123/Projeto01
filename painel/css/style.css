@@ -494,6 +494,12 @@ a.btn-delete{
     background-color: #dbdada;
 }
 
+a.btn.order{
+    background-color: #189778;
+    color: white;
+    padding: 5px 6px;
+}
+
 
 
 @media screen and (max-width: 1000px){
