@@ -39,7 +39,7 @@
             <div class="menu-links-secoes">
                 <h3>Cadastro</h3>
                 <a <?php selecionadoMenu('cadastro-depoimento'); ?> href="<?php echo INCLUDE_PATH_PAINEL; ?>cadastro-depoimento">Cadastrar Depoimento</a>
-                <a <?php selecionadoMenu('cadastro-servico'); ?> href="">Cadastrar Serviço</a>
+                <a <?php selecionadoMenu('cadastro-servico'); ?> href="<?php INCLUDE_PATH_PAINEL; ?>cadastrar-servicos">Cadastrar Serviço</a>
                 <a <?php selecionadoMenu('cadastro-slide'); ?> href="">Cadastrar Slide</a>
                 
             </div>
@@ -47,7 +47,7 @@
             <div class="menu-links-secoes">
                 <h3>Gestão</h3>
                 <a <?php selecionadoMenu('listar-depoimentos'); ?> href="<?php echo INCLUDE_PATH_PAINEL; ?>listar-depoimentos">Listar Depoimentos</a>
-                <a <?php selecionadoMenu('listar-servicos'); ?> href="">Listar Serviços</a>
+                <a <?php selecionadoMenu('listar-servicos'); ?> href="<?php echo INCLUDE_PATH_PAINEL; ?>listar-servicos">Listar Serviços</a>
                 <a <?php selecionadoMenu('listar-slides'); ?> href="">Listar Serviços</a>
             </div>
             <div class="menu-links-secoes">

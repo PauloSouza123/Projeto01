@@ -108,18 +108,14 @@
                 <div class="servicos-single">
                 <h2>Nossos Serviços</h2>
                     <ul>
-                        <li><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita eos explicabo nemo dolorem! 
-                            Voluptatum nam odio sapiente repellendus illo eius, recusandae magnam harum sequi a! Nihil sapiente 
-                            fugiat aspernatur odit!</p></li>
-                        <li><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita eos explicabo nemo dolorem! 
-                            Voluptatum nam odio sapiente repellendus illo eius, recusandae magnam harum sequi a! Nihil sapiente 
-                            fugiat aspernatur odit!</p></li>
-                        <li><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita eos explicabo nemo dolorem! 
-                            Voluptatum nam odio sapiente repellendus illo eius, recusandae magnam harum sequi a! Nihil sapiente 
-                            fugiat aspernatur odit!</p></li>
-                        <li><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita eos explicabo nemo dolorem! 
-                            Voluptatum nam odio sapiente repellendus illo eius, recusandae magnam harum sequi a! Nihil sapiente 
-                            fugiat aspernatur odit!</p></li>
+                        <?php
+                            $sql = MySql::conectar()->prepare("SELECT * FROM `tb_site.servicos` ORDER BY order_id ASC LIMIT 3");
+                            $sql->execute();
+                            $servicos = $sql->fetchAll();
+                            foreach($servicos as $key => $value){
+                        ?>
+                        <li><p><?php echo $value['servicos']; ?></p></li>
+                        <?php } ?>
                     </ul>
                 </div>
             </div>
