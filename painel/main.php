@@ -39,8 +39,8 @@
             <div class="menu-links-secoes">
                 <h3>Cadastro</h3>
                 <a <?php selecionadoMenu('cadastro-depoimento'); ?> href="<?php echo INCLUDE_PATH_PAINEL; ?>cadastro-depoimento">Cadastrar Depoimento</a>
-                <a <?php selecionadoMenu('cadastro-servico'); ?> href="<?php INCLUDE_PATH_PAINEL; ?>cadastrar-servicos">Cadastrar Serviço</a>
-                <a <?php selecionadoMenu('cadastro-slide'); ?> href="">Cadastrar Slide</a>
+                <a <?php selecionadoMenu('cadastrar-servicos'); ?> href="<?php echo INCLUDE_PATH_PAINEL; ?>cadastrar-servicos">Cadastrar Serviço</a>
+                <a <?php selecionadoMenu('cadastrar-slides'); ?> href="<?php echo INCLUDE_PATH_PAINEL; ?>cadastrar-slides">Cadastrar Slide</a>
                 
             </div>
 
@@ -48,7 +48,7 @@
                 <h3>Gestão</h3>
                 <a <?php selecionadoMenu('listar-depoimentos'); ?> href="<?php echo INCLUDE_PATH_PAINEL; ?>listar-depoimentos">Listar Depoimentos</a>
                 <a <?php selecionadoMenu('listar-servicos'); ?> href="<?php echo INCLUDE_PATH_PAINEL; ?>listar-servicos">Listar Serviços</a>
-                <a <?php selecionadoMenu('listar-slides'); ?> href="">Listar Serviços</a>
+                <a <?php selecionadoMenu('listar-slides'); ?> href="<?php echo INCLUDE_PATH_PAINEL; ?>listar-slides">Listar Slides</a>
             </div>
             <div class="menu-links-secoes">
                 <h3>Administração do Painel</h3>
