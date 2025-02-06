@@ -6,15 +6,16 @@
     <?php
         if(isset($_POST['acao'])){
             if(Painel::insert($_POST)){
-                Painel::alert('sucesso','Depoimento cadastrado com sucesso!');
+                Painel::alert('sucesso','Serviço cadastrado com sucesso!');
             }else{
-                Painel::alert('erro','Erro ao cadastrar depoimento!');
+                Painel::alert('erro','Erro ao cadastrar serviço!');
             }
 
         }
     ?>
         <div class="form-editar-depoimento-single">
             <textarea name="servico"></textarea>
+            <input type="hidden" name="order_id" value="0"/>
             <input type="hidden" name="nome_tabela" value="tb_site.servicos"/>
             <input type="submit" name="acao" value="Cadastrar"/>
         </div>

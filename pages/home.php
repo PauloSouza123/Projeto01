@@ -109,7 +109,7 @@
                 <h2>Nossos Serviços</h2>
                     <ul>
                         <?php
-                            $sql = MySql::conectar()->prepare("SELECT * FROM `tb_site.servicos` ORDER BY order_id ASC LIMIT 3");
+                            $sql = MySql::conectar()->prepare("SELECT * FROM `tb_site.servicos` ORDER BY order_id ASC");
                             $sql->execute();
                             $servicos = $sql->fetchAll();
                             foreach($servicos as $key => $value){
