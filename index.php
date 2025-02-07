@@ -13,6 +13,11 @@
     Site::updateUsuarioOnline(); 
     Site::contador();
 ?>
+<?php
+    $infoSite = MySql::conectar()->prepare("SELECT * FROM `tb_site.config`");
+    $infoSite->execute();
+    $infoSite = $infoSite->fetch();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -24,7 +29,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link href="<?php echo INCLUDE_PATH; ?>estilo/style.css" rel="stylesheet"/>
     <link href="#" rel="shortcut icon"/>
-    <title>Projeto 01</title>
+    <title><?php echo $infoSite['titulo']; ?></title>
 </head>
 <body>
 

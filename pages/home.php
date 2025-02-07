@@ -23,23 +23,9 @@
     <section class="sobre-autor">
         <div class="center">
             <div class="descricao-autor w50 left">
-                <h2>Paulo A. Souza</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a lectus et est porta rhoncus 
-                    nec non libero. Nam auctor dolor id eros auctor tristique. Mauris egestas dolor et diam 
-                    tincidunt interdum. Nunc nec odio purus. Aenean in velit interdum eros fermentum fermentum. 
-                    Quisque a aliquam ex. Proin a euismod nibh. Vivamus libero tortor, ornare sed velit tempor, 
-                    euismod consequat diam. Phasellus molestie, odio ut aliquet finibus, diam ipsum imperdiet 
-                    nibh, sit amet rhoncus turpis nunc a nisi. Praesent eu elit at mauris pellentesque posuere. 
-                    Aliquam metus sem, dignissim ut lectus ut, gravida pretium ex. Vivamus in libero ullamcorper 
-                    odio dictum dictum nec at leo. Integer a felis in urna efficitur elementum porttitor id mauris. 
-                    Quisque tortor eros, lobortis iaculis nisi eget, consectetur scelerisque felis. Vivamus velit 
-                    leo, pharetra quis suscipit id, facilisis auctor nisi. Mauris non dolor pulvinar, pretium 
-                    justo at, pulvinar ligula.</p>
-                    <p>Aliquam metus sem, dignissim ut lectus ut, gravida pretium ex. Vivamus in libero ullamcorper 
-                    odio dictum dictum nec at leo. Integer a felis in urna efficitur elementum porttitor id mauris. 
-                    Quisque tortor eros, lobortis iaculis nisi eget, consectetur scelerisque felis. Vivamus velit 
-                    leo, pharetra quis suscipit id, facilisis auctor nisi. Mauris non dolor pulvinar, pretium 
-                    justo at, pulvinar ligula.</p>
+                <h2><?php echo $infoSite['nome_autor']; ?></h2>
+                <p><?php echo $infoSite['descricao']; ?></p>
+                <p><?php echo $infoSite['descricao1']; ?></p>
             </div>
             <div class="image-autor w50 right">
                 <img src="<?php INCLUDE_PATH; ?>images/girl.jpg"/>
@@ -52,34 +38,19 @@
         <div class="center">
             <h2>Especialidades</h2>
             <div class="box-especialidade w33 left">
-                <h3><i class="fa-brands fa-css3"></i></h3>
+                <h3><i class="<?php echo $infoSite['icone1']; ?>"></i></h3>
                 <h4>CSS3</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero reiciendis eveniet sed, nulla 
-                    vitae sequi voluptatum culpa repellendus expedita aspernatur dolorem iure? Laudantium repellendus 
-                    corrupti amet culpa obcaecati nesciunt rem!Integer a felis in urna efficitur elementum porttitor id mauris. 
-                    Quisque tortor eros, lobortis iaculis nisi eget, consectetur scelerisque felis. Vivamus velit 
-                    leo, pharetra quis suscipit id, facilisis auctor nisi. Mauris non dolor pulvinar, pretium 
-                    justo at, pulvinar ligula</p>
+                <p><?php echo $infoSite['descricao1']; ?></p>
             </div>
             <div class="box-especialidade w33 left">
-                <h3><i class="fa-brands fa-html5"></i></h3>
+                <h3><i class="<?php echo $infoSite['icone2']; ?>"></i></h3>
                 <h4>HTML5</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero reiciendis eveniet sed, nulla 
-                    vitae sequi voluptatum culpa repellendus expedita aspernatur dolorem iure? Laudantium repellendus 
-                    corrupti amet culpa obcaecati nesciunt rem!Integer a felis in urna efficitur elementum porttitor id mauris. 
-                    Quisque tortor eros, lobortis iaculis nisi eget, consectetur scelerisque felis. Vivamus velit 
-                    leo, pharetra quis suscipit id, facilisis auctor nisi. Mauris non dolor pulvinar, pretium 
-                    justo at, pulvinar ligula</p>
+                <p><?php echo $infoSite['descricao2']; ?></p>
             </div>
             <div class="box-especialidade w33 left">
-                <h3><i class="fa-brands fa-js"></i></h3>
+                <h3><i class="<?php echo $infoSite['icone3']; ?>"></i></h3>
                 <h4>JAVASCRIPT</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero reiciendis eveniet sed, nulla 
-                    vitae sequi voluptatum culpa repellendus expedita aspernatur dolorem iure? Laudantium repellendus 
-                    corrupti amet culpa obcaecati nesciunt rem!Integer a felis in urna efficitur elementum porttitor id mauris. 
-                    Quisque tortor eros, lobortis iaculis nisi eget, consectetur scelerisque felis. Vivamus velit 
-                    leo, pharetra quis suscipit id, facilisis auctor nisi. Mauris non dolor pulvinar, pretium 
-                    justo at, pulvinar ligula.</p>
+                <p><?php echo $infoSite['descricao3']; ?></p>
             </div>
             <div class="clear"></div>
         </div>

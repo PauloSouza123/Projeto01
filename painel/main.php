@@ -58,7 +58,7 @@
 
             <div class="menu-links-secoes">
                 <h3>Configurações Gerais</h3>
-                <a <?php selecionadoMenu('editar-site'); ?> href="">Editar Site</a>
+                <a <?php selecionadoMenu('editar-site'); ?> href="<?php echo INCLUDE_PATH_PAINEL; ?>editar-site">Editar Site</a>
             </div>
         </div>
         <div class="clear"></div>
