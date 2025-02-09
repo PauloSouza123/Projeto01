@@ -60,6 +60,14 @@
                 <h3>Configurações Gerais</h3>
                 <a <?php selecionadoMenu('editar-site'); ?> href="<?php echo INCLUDE_PATH_PAINEL; ?>editar-site">Editar Site</a>
             </div>
+
+            <div class="menu-links-secoes">
+                <h3>Gestão de Notícias</h3>
+                <a <?php selecionadoMenu('cadastrar-categorias'); ?> href="<?php echo INCLUDE_PATH_PAINEL; ?>cadastrar-categorias">Cadastrar Categorias</a>
+                <a <?php selecionadoMenu('gerenciar-categorias'); ?> href="<?php echo INCLUDE_PATH_PAINEL; ?>gerenciar-categorias">Gerenciar Categorias</a>
+                <a <?php selecionadoMenu('cadastrar-noticias'); ?> href="">Cadastrar Notícias</a>
+                <a <?php selecionadoMenu('gerenciar-noticias'); ?> href="">Gerenciar Notícias</a>
+            </div>
         </div>
         <div class="clear"></div>
     </div>

@@ -97,6 +97,7 @@ html,body{
     background-color: #455a64;
     height: 100%;
     overflow-y: auto;
+    padding-bottom: 40px;
 }
 
 header{
